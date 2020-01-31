@@ -22,37 +22,37 @@ import { propTypes, defaultProps } from './propTypes'
 import CN from './classNames'
 
 function Tour({
-  children,
-  isOpen,
-  startAt,
-  steps,
-  scrollDuration,
-  inViewThreshold,
-  scrollOffset,
-  disableInteraction,
-  disableKeyboardNavigation,
-  className,
-  closeWithMask,
-  onRequestClose,
-  onAfterOpen,
-  onBeforeClose,
-  CustomHelper,
-  showNumber,
-  accentColor,
-  highlightedMaskClassName,
-  maskClassName,
-  showButtons,
-  showNavigation,
-  prevButton,
-  showNavigationNumber,
-  disableDotsNavigation,
-  lastStepNextButton,
-  nextButton,
-  rounded,
-  maskSpace,
-  showCloseButton,
-  accessibilityOptions,
-}) {
+                children,
+                isOpen,
+                startAt,
+                steps,
+                scrollDuration,
+                inViewThreshold,
+                scrollOffset,
+                disableInteraction,
+                disableKeyboardNavigation,
+                className,
+                closeWithMask,
+                onRequestClose,
+                onAfterOpen,
+                onBeforeClose,
+                CustomHelper,
+                showNumber,
+                accentColor,
+                highlightedMaskClassName,
+                maskClassName,
+                showButtons,
+                showNavigation,
+                prevButton,
+                showNavigationNumber,
+                disableDotsNavigation,
+                lastStepNextButton,
+                nextButton,
+                rounded,
+                maskSpace,
+                showCloseButton,
+                accessibilityOptions,
+              }) {
   const [current, setCurrent] = useState(0)
   const [started, setStarted] = useState(false)
   const [state, dispatch] = useReducer(reducer, initialState)
@@ -198,8 +198,8 @@ function Tour({
         const offset = scrollOffset
           ? scrollOffset
           : nodeRect.height > h
-          ? -25
-          : -(h / 2) + nodeRect.height / 2
+            ? -25
+            : -(h / 2) + nodeRect.height / 2
         scrollSmooth.to(node, {
           context: isBody(parentScroll) ? window : parentScroll,
           duration: scrollDuration,
@@ -258,12 +258,14 @@ function Tour({
     steps[current] &&
     (typeof steps[current].content === 'function'
       ? steps[current].content({
-          close: close,
-          goTo,
-          inDOM: state.inDOM,
-          step: current + 1,
-        })
-      : steps[current].content)
+        close: close,
+        goTo,
+        inDOM: state.inDOM,
+        step: current + 1,
+      })
+      : steps[current].content);
+
+  const firstStepClass = current === 0 ? 'first-step' : '';
 
   return isOpen ? (
     <Portal>
@@ -311,8 +313,8 @@ function Tour({
           accentColor={accentColor}
           defaultStyles={!CustomHelper}
           className={cn(CN.helper.base, className, {
-            [CN.helper.isOpen]: isOpen,
-          })}
+            [CN.helper.isOpen]: isOpen
+          }, firstStepClass)}
           role="dialog"
           aria-labelledby={a11yOptions.ariaLabelledBy}
         >
@@ -376,8 +378,8 @@ function Tour({
                       onClick={
                         current === steps.length - 1
                           ? lastStepNextButton
-                            ? close
-                            : () => {}
+                          ? close
+                          : () => {}
                           : typeof nextStep === 'function'
                           ? nextStep
                           : this.nextStep
@@ -411,16 +413,19 @@ function Tour({
   ) : null
 }
 
+const { w, h } = getWindow();
+console.log(w, h);
 const initialState = {
-  top: 0,
+  top: h / 2,
   right: 0,
   bottom: 0,
-  left: 0,
-  width: 0,
-  height: 0,
-  w: 0,
-  h: 0,
-}
+  left: w / 2,
+  width: 200,
+  height: 200,
+  w: w,
+  h: h,
+};
+console.log(initialState);
 
 function reducer(state, action) {
   switch (action.type) {
