@@ -2,7 +2,8 @@
   "name": "reactour",
   "version": "1.15.1",
   "description": "Tourist Guide into your React Components",
-  "main": "./reactour.cjs.js",
+  "main": "dist/reactour.cjs.js",
+  "module": "dist/reactour.esm.js",
   "scripts": {
     "prepare": "npm run lib",
     "start": "webpack-dev-server --mode development --open",
