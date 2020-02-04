@@ -17,8 +17,9 @@ export default {
     }),
     filesize(),
     generatePackageJson({
+      outputFolder: 'dist',
       baseContents: (pkg) => ({
-        ...pkg,
+        name: pkg.name,
         main: './reactour.cjs.js',
       })
     }),
