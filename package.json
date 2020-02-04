@@ -5,6 +5,7 @@
   "main": "/dist/reactour.cjs.js",
   "module": "/dist/reactour.esm.js",
   "scripts": {
+    "prepare": "npm run lib",
     "prelib": "rimraf dist",
     "lib": "rollup -c",
     "lint": "eslint --fix ./; exit 0",
