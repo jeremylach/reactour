@@ -25,7 +25,11 @@
     "product-intro",
     "presentation"
   ],
-
+  "files": [
+    "dist",
+    "README.md",
+    "package.json"
+  ],
   "author": "Lionel T <elrumordelaluz@hotmail.com> (https://elrumordelaluz.com/)",
   "license": "MIT",
   "bugs": {
