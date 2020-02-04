@@ -3,7 +3,6 @@
   "version": "1.15.1",
   "description": "Tourist Guide into your React Components",
   "main": "./dist/reactour.cjs.js",
-  "module": "./dist/reactour.esm.js",
   "scripts": {
     "prelib": "rimraf dist",
     "lib": "rollup -c --environment INCLUDE_DEPS,BUILD:production",

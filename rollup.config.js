@@ -20,12 +20,10 @@ export default {
       baseContents: (pkg) => ({
         ...pkg,
         main: './reactour.cjs.js',
-        module: './reactour.esm.js'
       })
     }),
   ],
   output: [
     { file: pkg.main, format: 'cjs', exports: 'named' },
-    { file: pkg.module, format: 'es', exports: 'named' },
   ],
 }
