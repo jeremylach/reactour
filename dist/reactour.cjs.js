@@ -1094,7 +1094,6 @@ var _getWindow3 = getWindow(),
     w = _getWindow3.w,
     h = _getWindow3.h;
 
-console.log(w, h);
 var initialState = {
   top: h / 2,
   right: 0,
@@ -1105,7 +1104,6 @@ var initialState = {
   w: w,
   h: h
 };
-console.log(initialState);
 
 function reducer(state, action) {
   switch (action.type) {
