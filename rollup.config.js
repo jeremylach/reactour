@@ -17,7 +17,11 @@ export default {
     }),
     filesize(),
     generatePackageJson({
-      baseContents: (pkg) => (pkg)
+      baseContents: (pkg) => ({
+        ...pkg,
+        main: './reactour.cjs.js',
+        module: './reactour.esm.js'
+      })
     }),
   ],
   output: [
