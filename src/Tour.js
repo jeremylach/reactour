@@ -414,7 +414,7 @@ function Tour({
 }
 
 const { w, h } = getWindow();
-console.log(w, h);
+
 const initialState = {
   top: h / 2,
   right: 0,
@@ -425,7 +425,7 @@ const initialState = {
   w: w,
   h: h,
 };
-console.log(initialState);
+
 
 function reducer(state, action) {
   switch (action.type) {
