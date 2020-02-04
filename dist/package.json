@@ -2,9 +2,10 @@
   "name": "reactour",
   "version": "1.15.1",
   "description": "Tourist Guide into your React Components",
-  "main": "./dist/reactour.cjs.js",
-  "module": "./dist/reactour.esm.js",
+  "main": "./reactour.cjs.js",
+  "module": "./reactour.esm.js",
   "scripts": {
+    "prepare": "npm run lib",
     "prelib": "rimraf dist",
     "lib": "rollup -c",
     "lint": "eslint --fix ./; exit 0",
@@ -74,7 +75,6 @@
     "lodash.debounce": "4.0.8",
     "prop-types": "15.7.2",
     "react-focus-lock": "2.2.1",
-    "rollup-plugin-generate-package-json": "^3.2.0",
     "scroll-smooth": "1.1.0",
     "scrollparent": "2.0.1"
   }
