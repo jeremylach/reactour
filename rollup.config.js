@@ -16,7 +16,9 @@ export default {
       exclude: ['node_modules/**'],
     }),
     filesize(),
-    generatePackageJson(),
+    generatePackageJson({
+      baseContents: (pkg) => (pkg)
+    }),
   ],
   output: [
     { file: pkg.main, format: 'cjs', exports: 'named' },
