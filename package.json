@@ -2,8 +2,8 @@
   "name": "reactour",
   "version": "1.15.1",
   "description": "Tourist Guide into your React Components",
-  "main": "./reactour.cjs.js",
-  "module": "./reactour.esm.js",
+  "main": "./dist/reactour.cjs.js",
+  "module": "./dist/reactour.esm.js",
   "scripts": {
     "prelib": "rimraf dist",
     "lib": "rollup -c --environment INCLUDE_DEPS,BUILD:production",
@@ -25,6 +25,7 @@
     "presentation"
   ],
   "files": [
+    "dist",
     "README.md"
   ],
   "author": "Lionel T <elrumordelaluz@hotmail.com> (https://elrumordelaluz.com/)",
